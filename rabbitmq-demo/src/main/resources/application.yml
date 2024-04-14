@@ -1,0 +1,16 @@
+server:
+  port: 3000
+spring:
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+#    exchange: hi1object.exchange
+#    queue: hi1object.queue
+#    routingkey: hi1object.routingkey
+
+rabbitmq:
+  queue: hi1object.queue
+  exchange: hi1object.exchange
+  routingkey: hi1object.routingkey
