@@ -14,3 +14,4 @@ rabbitmq:
   queue: hi1object.queue
   exchange: hi1object.exchange
   routingkey: hi1object.routingkey
+
