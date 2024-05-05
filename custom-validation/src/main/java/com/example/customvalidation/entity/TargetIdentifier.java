@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 
 public class TargetIdentifier {
-	public TargetIdentifierValues TargetIdentifierValues;
+    public TargetIdentifierValues TargetIdentifierValues;
 }

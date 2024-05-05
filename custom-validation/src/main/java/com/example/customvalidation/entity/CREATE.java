@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class CREATE {
-	public HI1Object HI1Object;
+    public HI1Object HI1Object;
 }

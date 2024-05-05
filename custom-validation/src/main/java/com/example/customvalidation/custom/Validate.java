@@ -14,7 +14,7 @@ public class Validate {
     }
 
     static void scanFieldsRecursive(Class<?> clazz, Object object) {
-    
+
 //        //validate annotation
 //        Class<?> clazz = hi1Object.getClass();
 //        //lặp đệ qui

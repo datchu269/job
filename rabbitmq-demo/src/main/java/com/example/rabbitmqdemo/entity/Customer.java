@@ -16,6 +16,7 @@ public class Customer {
     private String email;
 
     private List<Order> orders;
+
     public void addOrder(Order order) {
         if (orders == null) {
             orders = new ArrayList<>();

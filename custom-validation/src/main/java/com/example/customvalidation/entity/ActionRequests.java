@@ -6,5 +6,5 @@ import java.util.List;
 
 @Data
 public class ActionRequests {
-	public List<ActionRequest> ActionRequest;
+    public List<ActionRequest> ActionRequest;
 }

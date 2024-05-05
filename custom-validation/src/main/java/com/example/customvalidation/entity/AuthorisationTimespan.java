@@ -6,6 +6,6 @@ import java.util.Date;
 
 @Data
 public class AuthorisationTimespan {
-	public Date StartTime;
-	public Date EndTime;
+    public Date StartTime;
+    public Date EndTime;
 }

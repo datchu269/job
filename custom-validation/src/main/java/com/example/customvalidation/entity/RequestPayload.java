@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 
 public class RequestPayload {
-	public ActionRequests ActionRequests;
+    public ActionRequests ActionRequests;
 }

@@ -8,19 +8,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RabbitMQSender {
+    @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @Value("${rabbitmq.exchange}")
     private String exchange;
     @Value("${rabbitmq.routingkey}")
     private String routingkey;
-    @Autowired
-    public RabbitMQSender(RabbitTemplate rabbitTemplate) {
-        this.rabbitTemplate = rabbitTemplate;
-    }
 
-    public void send(User user){
-        rabbitTemplate.convertAndSend(exchange,routingkey, user);
+    public void send(UserTest user) {
+        rabbitTemplate.convertAndSend(exchange, routingkey, user);
 
     }
 

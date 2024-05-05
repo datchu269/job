@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class AssociatedObjects {
-	public String AssociatedObject;
+    public String AssociatedObject;
 }

@@ -2,6 +2,7 @@ package com.example.rabbitmqdemo.mapper;
 
 import com.example.rabbitmqdemo.entity.hi1.*;
 import org.springframework.jdbc.core.RowMapper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

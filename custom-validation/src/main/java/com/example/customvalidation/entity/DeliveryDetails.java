@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 
 public class DeliveryDetails {
-	public DeliveryDestination DeliveryDestination;
+    public DeliveryDestination DeliveryDestination;
 }

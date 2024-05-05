@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 
 public class DeliveryAddress {
-	public String IPv4Address;
+    public String IPv4Address;
 }

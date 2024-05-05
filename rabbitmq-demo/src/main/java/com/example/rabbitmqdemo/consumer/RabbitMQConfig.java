@@ -12,7 +12,7 @@
 //
 //
 //@Configuration
-//public class RabbitMQConfig2 {
+//public class RabbitMQConfig {
 //
 //    @Value("${rabbitmq.queue}")
 //    private String queue;

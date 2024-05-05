@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 
 public class TargetIdentifierValue {
-	public FormatType FormatType;
-	public double Value;
+    public FormatType FormatType;
+    public double Value;
 }

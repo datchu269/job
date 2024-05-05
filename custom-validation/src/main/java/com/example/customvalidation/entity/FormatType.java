@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 
 public class FormatType {
-	public String FormatOwner;
-	public String FormatName;
+    public String FormatOwner;
+    public String FormatName;
 }

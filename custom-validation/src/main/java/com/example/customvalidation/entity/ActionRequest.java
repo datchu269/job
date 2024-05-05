@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class ActionRequest {
-	public int ActionIdentifier;
-	public CREATE CREATE;
+    public int ActionIdentifier;
+    public CREATE CREATE;
 }

@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 
 public class ReceiverIdentifier {
-	public String CountryCode;
-	public String UniqueIdentifier;
+    public String CountryCode;
+    public String UniqueIdentifier;
 }

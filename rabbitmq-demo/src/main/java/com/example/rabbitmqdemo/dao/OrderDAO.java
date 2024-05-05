@@ -18,7 +18,7 @@ public class OrderDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-//    public void insertOrder(Order order) {
+    //    public void insertOrder(Order order) {
 //        String sql = "INSERT INTO orders (customer_id, order_date) VALUES (?, ?)";
 //        jdbcTemplate.update(sql, order.getCustomerId(), order.getOrderDate());
 //    }

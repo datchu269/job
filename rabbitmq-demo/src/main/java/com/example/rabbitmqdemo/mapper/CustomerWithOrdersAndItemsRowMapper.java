@@ -25,6 +25,7 @@ public class CustomerWithOrdersAndItemsRowMapper implements RowMapper<Customer> 
         return extractor.extractData(rs);
     }
 }
+
 class CustomerResultSetExtractor implements ResultSetExtractor<Customer> {
 
     @SneakyThrows

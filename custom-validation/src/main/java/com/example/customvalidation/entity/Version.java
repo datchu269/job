@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 
 public class Version {
-	public String ETSIVersion;
-	public String NationalProfileOwner;
-	public String NationalProfileVersion;
+    public String ETSIVersion;
+    public String NationalProfileOwner;
+    public String NationalProfileVersion;
 }

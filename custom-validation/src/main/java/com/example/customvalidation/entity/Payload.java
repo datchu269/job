@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 
 public class Payload {
-	public RequestPayload RequestPayload;
+    public RequestPayload RequestPayload;
 }

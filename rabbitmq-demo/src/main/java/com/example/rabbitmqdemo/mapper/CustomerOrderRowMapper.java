@@ -3,6 +3,7 @@ package com.example.rabbitmqdemo.mapper;
 import com.example.rabbitmqdemo.entity.Customer;
 import com.example.rabbitmqdemo.entity.Order;
 import org.springframework.jdbc.core.RowMapper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
