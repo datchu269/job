@@ -1,14 +1,15 @@
 package com.example.customvalidation.custom;
 
 import com.example.customvalidation.entity.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @Component
 public class Validate {
@@ -115,11 +116,55 @@ public class Validate {
         return create;
     }
 
+//    public static void main(String[] args) {
+//        Create create = create();
+//
+//        validateCreate(create.getClass(), create, CREATE_NAME);
+//
+//        System.out.println(create);
+//    }
+
+    private static final ObjectMapper objectMapper = new ObjectMapper();
+
+    /**
+     * Phân tích chuỗi JSON và trả về một HashMap chứa các key dạng "path" và giá trị boolean tương ứng.
+     *
+     * @param jsonString Chuỗi JSON cần phân tích
+     * @return HashMap chứa các key dạng "path" và giá trị boolean tương ứng
+     * @throws IOException Ném ngoại lệ nếu có lỗi khi phân tích chuỗi JSON
+     */
+    public static Map<String, Boolean> parseJsonToMap(String jsonString) {
+        try {
+            JsonNode rootNode = objectMapper.readTree(jsonString);
+            HashMap<String, Boolean> resultMap = new HashMap<>();
+            traverseJsonNode(rootNode, "", resultMap);
+            return resultMap;
+        } catch (IOException e) {
+            return new HashMap<>();
+        }
+    }
+
+    private static void traverseJsonNode(JsonNode node, String currentPath, Map<String, Boolean> resultMap) {
+        node.fields().forEachRemaining(entry -> {
+            String fieldName = entry.getKey();
+            JsonNode fieldValue = entry.getValue();
+            String fieldPath = currentPath.isEmpty() ? fieldName : currentPath + "." + fieldName;
+
+            if (fieldValue.isBoolean()) {
+                resultMap.put(fieldPath, fieldValue.asBoolean());
+            } else if (fieldValue.isObject()) {
+                traverseJsonNode(fieldValue, fieldPath, resultMap); // Đệ quy cho đối tượng JSON lồng nhau
+            }
+        });
+    }
+
     public static void main(String[] args) {
-        Create create = create();
+        String jsonString = "{\"Get\":{\"ObjectIdentifier\":true},\"Create\":{\"Hi1Object\":{\"ObjectIdentifier\":true,\"Generation\":true,\"LiTaskObject\":{\"LastChanged\":false,\"Delivery\":true},\"AuthorObject\":{\"LastChanged\":false,\"Delivery\":true}},\"LiTaskObject\":{\"LastChanged\":false,\"Delivery\":true},\"AuthorObject\":{\"LastChanged\":false,\"Delivery\":true}},\"Update\":{\"Hi1Object\":{\"ObjectIdentifier\":true,\"Generation\":true,\"LiTaskObject\":{\"LastChanged\":false,\"Delivery\":true},\"AuthorObject\":{\"LastChanged\":false,\"Delivery\":true}},\"LiTaskObject\":{\"LastChanged\":false,\"Delivery\":true},\"AuthorObject\":{\"LastChanged\":false,\"Delivery\":true}}}";
 
-        validateCreate(create.getClass(), create, CREATE_NAME);
+        Map<String, Boolean> resultMap = parseJsonToMap(jsonString);
 
-        System.out.println(create);
+        // In kết quả
+        resultMap.forEach((key, value) -> System.out.println(key + ": " + value));
+
     }
 }
