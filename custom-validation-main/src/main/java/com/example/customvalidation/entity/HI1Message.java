@@ -5,7 +5,6 @@ import com.example.customvalidation.custom.ValidateType;
 import lombok.Data;
 
 @Data
-
 public class HI1Message {
 	@Hi1Validate(ValidateType.OBJECT_DATA_TYPE)
 	public Header Header;
@@ -17,4 +16,7 @@ public class HI1Message {
 	public String task;
 	public String auth;
 	public String text;
+
+	public HI1Message(Header header, ErrorInfo errorInfo) {
+	}
 }

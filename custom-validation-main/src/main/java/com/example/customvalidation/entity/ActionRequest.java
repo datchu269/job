@@ -9,6 +9,7 @@ public class ActionRequest {
 	public Get get;
 	public List list;
 	public Update update;
+	public ErrorInfo errorInfo;
 
 	public ActionRequest(int actionIdentifier, Create create, Get get, List list, Update update) {
 		this.actionIdentifier = actionIdentifier;
