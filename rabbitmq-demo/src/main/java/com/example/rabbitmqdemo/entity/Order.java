@@ -11,13 +11,17 @@ import java.util.List;
 @Getter
 @Setter
 @SuperBuilder
+
 public class Order {
     private Long id;
     private Long customerId;
     private Date orderDate;
 
     private List<OrderItem> orderItems;
-
+    public Order(Long customerId, Date orderDate) {
+        this.customerId = customerId;
+        this.orderDate = orderDate;
+    }
     public void addOrderItem(OrderItem orderItem) {
         if (orderItems == null) {
             orderItems = new ArrayList<>();
